@@ -24,6 +24,8 @@ local VisualsFrame3 = Instance.new("Frame")
 local MainMiscFrame = Instance.new("Frame")
 local MiscFrame1 = Instance.new("Frame")
 local UnloadButton = Instance.new("TextButton")
+local SpeedHackCheckbox = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
 local MainSettingsFrame = Instance.new("Frame")
 local SettingsFrame1 = Instance.new("Frame")
 
@@ -134,6 +136,7 @@ MainLegitFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainLegitFrame.BackgroundTransparency = 1.000
 MainLegitFrame.BorderSizePixel = 0
 MainLegitFrame.Size = UDim2.new(1, 0, 1, 0)
+MainLegitFrame.Visible = false
 
 LegitFrame1.Name = "LegitFrame1"
 LegitFrame1.Parent = MainLegitFrame
@@ -203,7 +206,6 @@ MainMiscFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainMiscFrame.BackgroundTransparency = 1.000
 MainMiscFrame.BorderSizePixel = 0
 MainMiscFrame.Size = UDim2.new(1, 0, 1, 0)
-MainMiscFrame.Visible = false
 
 MiscFrame1.Name = "MiscFrame1"
 MiscFrame1.Parent = MainMiscFrame
@@ -212,7 +214,7 @@ MiscFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
 MiscFrame1.Size = UDim2.new(1, 0, 1, 0)
 
 UnloadButton.Name = "UnloadButton"
-UnloadButton.Parent = game.CoreGui.ScreenGui.MainFrame.TabFrame.SubFrame.MainMiscFrame["MiscFrame1"]
+UnloadButton.Parent = MiscFrame1
 UnloadButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 UnloadButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 UnloadButton.Position = UDim2.new(0.825264096, 0, 0.853123248, 0)
@@ -222,6 +224,29 @@ UnloadButton.Text = "Unload"
 UnloadButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 UnloadButton.TextSize = 18.000
 UnloadButton.TextWrapped = true
+
+SpeedHackCheckbox.Name = "SpeedHackCheckbox"
+SpeedHackCheckbox.Parent = MiscFrame1
+SpeedHackCheckbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackCheckbox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackCheckbox.BorderSizePixel = 2
+SpeedHackCheckbox.Position = UDim2.new(0.0360214673, 0, 0.0511597246, 0)
+SpeedHackCheckbox.Size = UDim2.new(0.0199999996, 0, 0.0450000018, 0)
+SpeedHackCheckbox.Font = Enum.Font.SourceSans
+SpeedHackCheckbox.Text = ""
+SpeedHackCheckbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedHackCheckbox.TextSize = 14.000
+
+TextLabel_2.Parent = SpeedHackCheckbox
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(1.46079969, 0, -0.461745352, 0)
+TextLabel_2.Size = UDim2.new(6.07557964, 0, 1.86785161, 0)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "SpeedHack"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 18.000
+TextLabel_2.TextWrapped = true
 
 MainSettingsFrame.Name = "MainSettingsFrame"
 MainSettingsFrame.Parent = SubFrame
@@ -237,9 +262,11 @@ SettingsFrame1.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 SettingsFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
 SettingsFrame1.Size = UDim2.new(1, 0, 1, 0)
 
--- Scripts:
+-- tables
+local callbacks = {}
 
-local function KEDRM_fake_script() -- Scripts.LocalScript 
+-- Scripts:
+local function TGOS_fake_script() -- Scripts.FrameScript 
 	local script = Instance.new('LocalScript', Scripts)
 
 	local mainframe = script.Parent.Parent.MainFrame.TabFrame
@@ -270,10 +297,44 @@ local function KEDRM_fake_script() -- Scripts.LocalScript
 		end)
 	end
 end
-coroutine.wrap(KEDRM_fake_script)()
+coroutine.wrap(TGOS_fake_script)()
+
+local function KVRQ_fake_script() -- Scripts.SpeedHackScript 
+	local script = Instance.new('LocalScript', Scripts)
+
+	local RunService = game:GetService("RunService")
+	local pl = game:GetService("Players")
+	local lpl = pl.LocalPlayer
+	local button = script.Parent.Parent.MainFrame.TabFrame.SubFrame.MainMiscFrame.MiscFrame1.SpeedHackCheckbox
+	local isActivated = false
+	local defaultWalkSpeed = lpl.Character.Humanoid.WalkSpeed
+	
+	button.Activated:Connect(function()
+		isActivated = not isActivated
+		
+		if isActivated == true then
+			button.BackgroundColor3 = Color3.fromRGB(110,110,110)
+		else
+			button.BackgroundColor3 = Color3.fromRGB(255,255,255)
+		end
+	end)
+	
+	local run_service = RunService.RenderStepped:Connect(function()
+		if isActivated == true then
+			lpl.Character.Humanoid.WalkSpeed = 50
+		else
+			if lpl.Character.Humanoid.WalkSpeed == 50 then
+				lpl.Character.Humanoid.WalkSpeed = defaultWalkSpeed
+			else
+				
+			end
+		end
+	end)
+	table.insert(callbacks, run_service)
+end
+coroutine.wrap(KVRQ_fake_script)()
 
 -- functions
-
 local function onInputBegan(input, gameProcessed)
 	if input.UserInputType == Enum.UserInputType.Keyboard then
 		if input.KeyCode == Enum.KeyCode.Insert then
@@ -282,16 +343,11 @@ local function onInputBegan(input, gameProcessed)
 	end
 end
 
--- tables
-
-local callbacks = {}
-
 -- callbacks
-
 table.insert(callbacks, UserInputService.InputBegan:Connect(onInputBegan))
 
--- gui handling
 
+-- gui handling
 UnloadButton.Activated:Connect(function() 
 	for i, v in pairs (callbacks) do
 		v:Disconnect()
