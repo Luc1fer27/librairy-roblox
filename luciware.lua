@@ -412,7 +412,8 @@ local InsertMenu = UserInputService.InputBegan:Connect(function(input)
 end)
 
 -- SpeedHack
-local defaultWalkSpeed = localplayer.Character.Humanoid.WalkSpeed
+local localWalkSpeed = localplayer.Character.Humanoid.WalkSpeed
+local defaultWalkSpeed = localWalkSpeed
 local isSpeedHackActivated = false
 
 SpeedHackButton.Activated:Connect(function()
@@ -420,23 +421,16 @@ SpeedHackButton.Activated:Connect(function()
 
 	if isSpeedHackActivated == true then
 		SpeedHackButton.BackgroundColor3 = Color3.fromRGB(48, 165, 255)
+
+		localWalkSpeed = 50
 	else
 		SpeedHackButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 
-		if localplayer.Character.Humanoid.WalkSpeed == 50 then
-			localplayer.Character.Humanoid.WalkSpeed = defaultWalkSpeed
+		if localWalkSpeed == 50 then
+			localWalkSpeed = defaultWalkSpeed
 		end
 	end
 end)
-
-while isSpeedHackActivated do
-	localplayer.Character.Humanoid.WalkSpeed = 50
-	wait()
-
-	if not isSpeedHackActivated then
-		break
-	end
-end
 
 -- Unload Button
 UnloadButton.Activated:Connect(function()
