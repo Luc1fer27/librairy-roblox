@@ -150,7 +150,7 @@ RageFrame1.Parent = MainRageFrame
 RageFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 RageFrame1.BorderSizePixel = 0
 RageFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
-RageFrame1.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+RageFrame1.Size = UDim2.new(0.449999988, 0, 0.949999988, 0)
 
 HeaderRageFrame1.Name = "HeaderRageFrame1"
 HeaderRageFrame1.Parent = RageFrame1
@@ -167,8 +167,8 @@ RageFrame2.Name = "RageFrame2"
 RageFrame2.Parent = MainRageFrame
 RageFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 RageFrame2.BorderSizePixel = 0
-RageFrame2.Position = UDim2.new(0.5, 0, 0.0500000007, 0)
-RageFrame2.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+RageFrame2.Position = UDim2.new(0.550000012, 0, 0.0500000007, 0)
+RageFrame2.Size = UDim2.new(0.449999988, 0, 0.949999988, 0)
 
 HeaderRageFrame2.Name = "HeaderRageFrame2"
 HeaderRageFrame2.Parent = RageFrame2
@@ -195,7 +195,7 @@ LegitFrame1.Parent = MainLegitFrame
 LegitFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 LegitFrame1.BorderSizePixel = 0
 LegitFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
-LegitFrame1.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+LegitFrame1.Size = UDim2.new(0.449999988, 0, 0.949999988, 0)
 
 HeaderLegitFrame1.Name = "HeaderLegitFrame1"
 HeaderLegitFrame1.Parent = LegitFrame1
@@ -212,8 +212,8 @@ LegitFrame2.Name = "LegitFrame2"
 LegitFrame2.Parent = MainLegitFrame
 LegitFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 LegitFrame2.BorderSizePixel = 0
-LegitFrame2.Position = UDim2.new(0.5, 0, 0.0500000007, 0)
-LegitFrame2.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+LegitFrame2.Position = UDim2.new(0.550000012, 0, 0.0500000007, 0)
+LegitFrame2.Size = UDim2.new(0.449999988, 0, 0.949999988, 0)
 
 HeaderLegitFrame2.Name = "HeaderLegitFrame2"
 HeaderLegitFrame2.Parent = LegitFrame2
@@ -336,7 +336,7 @@ VisualsFrame1.Parent = MainVisualsFrame
 VisualsFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 VisualsFrame1.BorderSizePixel = 0
 VisualsFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
-VisualsFrame1.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+VisualsFrame1.Size = UDim2.new(0.449999988, 0, 0.949999988, 0)
 
 HeaderVisualsFrame1.Name = "HeaderVisualsFrame1"
 HeaderVisualsFrame1.Parent = VisualsFrame1
@@ -353,8 +353,8 @@ VisualsFrame2.Name = "VisualsFrame2"
 VisualsFrame2.Parent = MainVisualsFrame
 VisualsFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 VisualsFrame2.BorderSizePixel = 0
-VisualsFrame2.Position = UDim2.new(0.5, 0, 0.0500000007, 0)
-VisualsFrame2.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+VisualsFrame2.Position = UDim2.new(0.550000012, 0, 0.0500000007, 0)
+VisualsFrame2.Size = UDim2.new(0.449999988, 0, 0.949999988, 0)
 
 HeaderVisualsFrame2.Name = "HeaderVisualsFrame2"
 HeaderVisualsFrame2.Parent = VisualsFrame2
