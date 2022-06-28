@@ -1,71 +1,59 @@
 -- Instances:
-local UserInputService = game:GetService("UserInputService")
-local ScreenGui = Instance.new("ScreenGui")
-local Scripts = Instance.new("Folder")
+local MenuGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TabFrame = Instance.new("Frame")
+local MainTabFrame = Instance.new("Frame")
 local LegitButton = Instance.new("TextButton")
 local RageButton = Instance.new("TextButton")
 local VisualsButton = Instance.new("TextButton")
 local MiscButton = Instance.new("TextButton")
 local SettingsButton = Instance.new("TextButton")
-local SubFrame = Instance.new("Frame")
-local MainLegitFrame = Instance.new("Frame")
-local LegitFrame1 = Instance.new("Frame")
-local LegitFrame2 = Instance.new("Frame")
+local HeaderFrame = Instance.new("Frame")
+local NameLabel = Instance.new("TextLabel")
 local MainRageFrame = Instance.new("Frame")
 local RageFrame1 = Instance.new("Frame")
+local HeaderRageFrame1 = Instance.new("TextLabel")
 local RageFrame2 = Instance.new("Frame")
-local MainVisualsFrame = Instance.new("Frame")
-local VisualsFrame1 = Instance.new("Frame")
-local VisualsFrame2 = Instance.new("Frame")
-local VisualsFrame3 = Instance.new("Frame")
-local MainMiscFrame = Instance.new("Frame")
-local MiscFrame1 = Instance.new("Frame")
-local UnloadButton = Instance.new("TextButton")
-local SpeedHackCheckbox = Instance.new("TextButton")
-local TextLabel_2 = Instance.new("TextLabel")
+local HeaderRageFrame2 = Instance.new("TextLabel")
+local MainLegitFrame = Instance.new("Frame")
+local LegitFrame1 = Instance.new("Frame")
+local HeaderLegitFrame1 = Instance.new("TextLabel")
+local LegitFrame2 = Instance.new("Frame")
+local HeaderLegitFrame2 = Instance.new("TextLabel")
 local MainSettingsFrame = Instance.new("Frame")
 local SettingsFrame1 = Instance.new("Frame")
+local HeaderSettingsFrame1 = Instance.new("TextLabel")
+local UnloadButton = Instance.new("TextButton")
+local MainMiscFrame = Instance.new("Frame")
+local MiscFrame1 = Instance.new("Frame")
+local HeaderMiscFrame1 = Instance.new("TextLabel")
+local MainVisualsFrame = Instance.new("Frame")
+local VisualsFrame1 = Instance.new("Frame")
+local HeaderVisualsFrame1 = Instance.new("TextLabel")
+local VisualsFrame2 = Instance.new("Frame")
+local HeaderVisualsFrame2 = Instance.new("TextLabel")
+local Scripts = Instance.new("Folder")
 
 --Properties:
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Enabled = true
-
-Scripts.Name = "Scripts"
-Scripts.Parent = ScreenGui
+MenuGui.Name = "MenuGui"
+MenuGui.Parent = game.CoreGui
+MenuGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 MainFrame.Name = "MainFrame"
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-MainFrame.BorderColor3 = Color3.fromRGB(4, 6, 8)
-MainFrame.BorderSizePixel = 2
-MainFrame.Position = UDim2.new(0.199701935, 0, 0.200000003, 0)
-MainFrame.Size = UDim2.new(0.600000024, 0, 0.5, 0)
+MainFrame.Parent = MenuGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+MainFrame.BorderColor3 = Color3.fromRGB(25, 59, 255)
+MainFrame.Position = UDim2.new(0.25, 0, 0.200000003, 0)
+MainFrame.Size = UDim2.new(0.5, 0, 0.600000024, 0)
 
-TextLabel.Parent = MainFrame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(-3.79006195e-08, 0, 0, 0)
-TextLabel.Size = UDim2.new(0.150000006, 0, 0.150000006, 0)
-TextLabel.Font = Enum.Font.SourceSansLight
-TextLabel.Text = "Luc1-Ware"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 30.000
-
-TabFrame.Name = "TabFrame"
-TabFrame.Parent = MainFrame
-TabFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabFrame.BackgroundTransparency = 1.000
-TabFrame.BorderSizePixel = 0
-TabFrame.Position = UDim2.new(0, 0, 0.150000006, 0)
-TabFrame.Size = UDim2.new(0.149999946, 0, 0.850000024, 0)
+MainTabFrame.Name = "MainTabFrame"
+MainTabFrame.Parent = MainFrame
+MainTabFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+MainTabFrame.BorderSizePixel = 0
+MainTabFrame.Position = UDim2.new(0, 0, 0.100000001, 0)
+MainTabFrame.Size = UDim2.new(0.119999997, 0, 0.899999976, 0)
 
 LegitButton.Name = "LegitButton"
-LegitButton.Parent = TabFrame
+LegitButton.Parent = MainTabFrame
 LegitButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LegitButton.BackgroundTransparency = 1.000
 LegitButton.BorderSizePixel = 0
@@ -73,10 +61,10 @@ LegitButton.Size = UDim2.new(1, 0, 0.200000003, 0)
 LegitButton.Font = Enum.Font.SourceSans
 LegitButton.Text = "Legit"
 LegitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-LegitButton.TextSize = 20.000
+LegitButton.TextSize = 18.000
 
 RageButton.Name = "RageButton"
-RageButton.Parent = TabFrame
+RageButton.Parent = MainTabFrame
 RageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 RageButton.BackgroundTransparency = 1.000
 RageButton.BorderSizePixel = 0
@@ -85,10 +73,10 @@ RageButton.Size = UDim2.new(1, 0, 0.200000003, 0)
 RageButton.Font = Enum.Font.SourceSans
 RageButton.Text = "Rage"
 RageButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-RageButton.TextSize = 20.000
+RageButton.TextSize = 18.000
 
 VisualsButton.Name = "VisualsButton"
-VisualsButton.Parent = TabFrame
+VisualsButton.Parent = MainTabFrame
 VisualsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 VisualsButton.BackgroundTransparency = 1.000
 VisualsButton.BorderSizePixel = 0
@@ -97,10 +85,10 @@ VisualsButton.Size = UDim2.new(1, 0, 0.200000003, 0)
 VisualsButton.Font = Enum.Font.SourceSans
 VisualsButton.Text = "Visuals"
 VisualsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-VisualsButton.TextSize = 20.000
+VisualsButton.TextSize = 18.000
 
 MiscButton.Name = "MiscButton"
-MiscButton.Parent = TabFrame
+MiscButton.Parent = MainTabFrame
 MiscButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MiscButton.BackgroundTransparency = 1.000
 MiscButton.BorderSizePixel = 0
@@ -109,10 +97,10 @@ MiscButton.Size = UDim2.new(1, 0, 0.200000003, 0)
 MiscButton.Font = Enum.Font.SourceSans
 MiscButton.Text = "Misc"
 MiscButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-MiscButton.TextSize = 20.000
+MiscButton.TextSize = 18.000
 
 SettingsButton.Name = "SettingsButton"
-SettingsButton.Parent = TabFrame
+SettingsButton.Parent = MainTabFrame
 SettingsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SettingsButton.BackgroundTransparency = 1.000
 SettingsButton.BorderSizePixel = 0
@@ -121,237 +109,236 @@ SettingsButton.Size = UDim2.new(1, 0, 0.200000003, 0)
 SettingsButton.Font = Enum.Font.SourceSans
 SettingsButton.Text = "Settings"
 SettingsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-SettingsButton.TextSize = 20.000
+SettingsButton.TextSize = 18.000
 
-SubFrame.Name = "SubFrame"
-SubFrame.Parent = TabFrame
-SubFrame.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-SubFrame.BorderSizePixel = 0
-SubFrame.Position = UDim2.new(1.04999995, 0, -0.140000001, 0)
-SubFrame.Size = UDim2.new(5.5, 0, 1.10000002, 0)
+HeaderFrame.Name = "HeaderFrame"
+HeaderFrame.Parent = MainFrame
+HeaderFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+HeaderFrame.BorderSizePixel = 0
+HeaderFrame.Position = UDim2.new(0.119999997, 0, 0.100000001, 0)
+HeaderFrame.Size = UDim2.new(0.879999995, 0, 0.0500000007, 0)
 
-MainLegitFrame.Name = "MainLegitFrame"
-MainLegitFrame.Parent = SubFrame
-MainLegitFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainLegitFrame.BackgroundTransparency = 1.000
-MainLegitFrame.BorderSizePixel = 0
-MainLegitFrame.Size = UDim2.new(1, 0, 1, 0)
-MainLegitFrame.Visible = false
-
-LegitFrame1.Name = "LegitFrame1"
-LegitFrame1.Parent = MainLegitFrame
-LegitFrame1.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-LegitFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
-LegitFrame1.Size = UDim2.new(0.5, 0, 1, 0)
-
-LegitFrame2.Name = "LegitFrame2"
-LegitFrame2.Parent = MainLegitFrame
-LegitFrame2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-LegitFrame2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-LegitFrame2.Position = UDim2.new(0.5, 0, 0, 0)
-LegitFrame2.Size = UDim2.new(0.5, 0, 1, 0)
+NameLabel.Name = "NameLabel"
+NameLabel.Parent = MainFrame
+NameLabel.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+NameLabel.BorderSizePixel = 0
+NameLabel.Size = UDim2.new(1, 0, 0.100000001, 0)
+NameLabel.Font = Enum.Font.SourceSans
+NameLabel.Text = "Luc1-Ware"
+NameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameLabel.TextSize = 20.000
+NameLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 
 MainRageFrame.Name = "MainRageFrame"
-MainRageFrame.Parent = SubFrame
+MainRageFrame.Parent = MainFrame
 MainRageFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainRageFrame.BackgroundTransparency = 1.000
 MainRageFrame.BorderSizePixel = 0
-MainRageFrame.Size = UDim2.new(1, 0, 1, 0)
+MainRageFrame.Position = UDim2.new(0.159999996, 0, 0.200000003, 0)
+MainRageFrame.Size = UDim2.new(0.800000012, 0, 0.75, 0)
 MainRageFrame.Visible = false
 
 RageFrame1.Name = "RageFrame1"
 RageFrame1.Parent = MainRageFrame
-RageFrame1.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-RageFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
-RageFrame1.Size = UDim2.new(0.5, 0, 1, 0)
+RageFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+RageFrame1.BorderSizePixel = 0
+RageFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
+RageFrame1.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+
+HeaderRageFrame1.Name = "HeaderRageFrame1"
+HeaderRageFrame1.Parent = RageFrame1
+HeaderRageFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderRageFrame1.BorderSizePixel = 0
+HeaderRageFrame1.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderRageFrame1.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+HeaderRageFrame1.Font = Enum.Font.SourceSans
+HeaderRageFrame1.Text = "Aimbot"
+HeaderRageFrame1.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderRageFrame1.TextSize = 15.000
 
 RageFrame2.Name = "RageFrame2"
 RageFrame2.Parent = MainRageFrame
-RageFrame2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-RageFrame2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-RageFrame2.Position = UDim2.new(0.5, 0, 0, 0)
-RageFrame2.Size = UDim2.new(0.5, 0, 1, 0)
+RageFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+RageFrame2.BorderSizePixel = 0
+RageFrame2.Position = UDim2.new(0.5, 0, 0.0500000007, 0)
+RageFrame2.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
 
-MainVisualsFrame.Name = "MainVisualsFrame"
-MainVisualsFrame.Parent = SubFrame
-MainVisualsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainVisualsFrame.BackgroundTransparency = 1.000
-MainVisualsFrame.BorderSizePixel = 0
-MainVisualsFrame.Size = UDim2.new(1, 0, 1, 0)
-MainVisualsFrame.Visible = false
+HeaderRageFrame2.Name = "HeaderRageFrame2"
+HeaderRageFrame2.Parent = RageFrame2
+HeaderRageFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderRageFrame2.BorderSizePixel = 0
+HeaderRageFrame2.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderRageFrame2.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+HeaderRageFrame2.Font = Enum.Font.SourceSans
+HeaderRageFrame2.Text = "Anti-Aim"
+HeaderRageFrame2.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderRageFrame2.TextSize = 15.000
 
-VisualsFrame1.Name = "VisualsFrame1"
-VisualsFrame1.Parent = MainVisualsFrame
-VisualsFrame1.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-VisualsFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
-VisualsFrame1.Size = UDim2.new(0.5, 0, 1, 0)
+MainLegitFrame.Name = "MainLegitFrame"
+MainLegitFrame.Parent = MainFrame
+MainLegitFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainLegitFrame.BackgroundTransparency = 1.000
+MainLegitFrame.BorderSizePixel = 0
+MainLegitFrame.Position = UDim2.new(0.159999996, 0, 0.200000003, 0)
+MainLegitFrame.Size = UDim2.new(0.800000012, 0, 0.75, 0)
+MainLegitFrame.Visible = false
 
-VisualsFrame2.Name = "VisualsFrame2"
-VisualsFrame2.Parent = MainVisualsFrame
-VisualsFrame2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-VisualsFrame2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-VisualsFrame2.Position = UDim2.new(0.5, 0, 0, 0)
-VisualsFrame2.Size = UDim2.new(0.5, 0, 0.5, 0)
+LegitFrame1.Name = "LegitFrame1"
+LegitFrame1.Parent = MainLegitFrame
+LegitFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+LegitFrame1.BorderSizePixel = 0
+LegitFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
+LegitFrame1.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
 
-VisualsFrame3.Name = "VisualsFrame3"
-VisualsFrame3.Parent = MainVisualsFrame
-VisualsFrame3.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-VisualsFrame3.BorderColor3 = Color3.fromRGB(255, 255, 255)
-VisualsFrame3.Position = UDim2.new(0.5, 0, 0.5, 0)
-VisualsFrame3.Size = UDim2.new(0.5, 0, 0.5, 0)
+HeaderLegitFrame1.Name = "HeaderLegitFrame1"
+HeaderLegitFrame1.Parent = LegitFrame1
+HeaderLegitFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderLegitFrame1.BorderSizePixel = 0
+HeaderLegitFrame1.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderLegitFrame1.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+HeaderLegitFrame1.Font = Enum.Font.SourceSans
+HeaderLegitFrame1.Text = "Aimbot"
+HeaderLegitFrame1.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderLegitFrame1.TextSize = 15.000
 
-MainMiscFrame.Name = "MainMiscFrame"
-MainMiscFrame.Parent = SubFrame
-MainMiscFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainMiscFrame.BackgroundTransparency = 1.000
-MainMiscFrame.BorderSizePixel = 0
-MainMiscFrame.Size = UDim2.new(1, 0, 1, 0)
+LegitFrame2.Name = "LegitFrame2"
+LegitFrame2.Parent = MainLegitFrame
+LegitFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+LegitFrame2.BorderSizePixel = 0
+LegitFrame2.Position = UDim2.new(0.5, 0, 0.0500000007, 0)
+LegitFrame2.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
 
-MiscFrame1.Name = "MiscFrame1"
-MiscFrame1.Parent = MainMiscFrame
-MiscFrame1.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-MiscFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
-MiscFrame1.Size = UDim2.new(1, 0, 1, 0)
-
-UnloadButton.Name = "UnloadButton"
-UnloadButton.Parent = MiscFrame1
-UnloadButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-UnloadButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-UnloadButton.Position = UDim2.new(0.825264096, 0, 0.853123248, 0)
-UnloadButton.Size = UDim2.new(0.150000006, 0, 0.100000009, 0)
-UnloadButton.Font = Enum.Font.SourceSans
-UnloadButton.Text = "Unload"
-UnloadButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-UnloadButton.TextSize = 18.000
-UnloadButton.TextWrapped = true
-
-SpeedHackCheckbox.Name = "SpeedHackCheckbox"
-SpeedHackCheckbox.Parent = MiscFrame1
-SpeedHackCheckbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpeedHackCheckbox.BorderColor3 = Color3.fromRGB(255, 255, 255)
-SpeedHackCheckbox.BorderSizePixel = 2
-SpeedHackCheckbox.Position = UDim2.new(0.0360214673, 0, 0.0511597246, 0)
-SpeedHackCheckbox.Size = UDim2.new(0.0199999996, 0, 0.0450000018, 0)
-SpeedHackCheckbox.Font = Enum.Font.SourceSans
-SpeedHackCheckbox.Text = ""
-SpeedHackCheckbox.TextColor3 = Color3.fromRGB(0, 0, 0)
-SpeedHackCheckbox.TextSize = 14.000
-
-TextLabel_2.Parent = SpeedHackCheckbox
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(1.46079969, 0, -0.461745352, 0)
-TextLabel_2.Size = UDim2.new(6.07557964, 0, 1.86785161, 0)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "SpeedHack"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 18.000
-TextLabel_2.TextWrapped = true
+HeaderLegitFrame2.Name = "HeaderLegitFrame2"
+HeaderLegitFrame2.Parent = LegitFrame2
+HeaderLegitFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderLegitFrame2.BorderSizePixel = 0
+HeaderLegitFrame2.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderLegitFrame2.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+HeaderLegitFrame2.Font = Enum.Font.SourceSans
+HeaderLegitFrame2.Text = "Triggerbot"
+HeaderLegitFrame2.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderLegitFrame2.TextSize = 15.000
 
 MainSettingsFrame.Name = "MainSettingsFrame"
-MainSettingsFrame.Parent = SubFrame
+MainSettingsFrame.Parent = MainFrame
 MainSettingsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainSettingsFrame.BackgroundTransparency = 1.000
 MainSettingsFrame.BorderSizePixel = 0
-MainSettingsFrame.Size = UDim2.new(1, 0, 1, 0)
+MainSettingsFrame.Position = UDim2.new(0.159999996, 0, 0.200000003, 0)
+MainSettingsFrame.Size = UDim2.new(0.800000012, 0, 0.75, 0)
 MainSettingsFrame.Visible = false
 
 SettingsFrame1.Name = "SettingsFrame1"
 SettingsFrame1.Parent = MainSettingsFrame
-SettingsFrame1.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-SettingsFrame1.BorderColor3 = Color3.fromRGB(255, 255, 255)
-SettingsFrame1.Size = UDim2.new(1, 0, 1, 0)
+SettingsFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+SettingsFrame1.BorderSizePixel = 0
+SettingsFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
+SettingsFrame1.Size = UDim2.new(1, 0, 0.949999988, 0)
 
--- tables
-local callbacks = {}
+HeaderSettingsFrame1.Name = "HeaderSettingsFrame1"
+HeaderSettingsFrame1.Parent = SettingsFrame1
+HeaderSettingsFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderSettingsFrame1.BorderSizePixel = 0
+HeaderSettingsFrame1.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderSettingsFrame1.Size = UDim2.new(0.200000003, 0, 0.0500000007, 0)
+HeaderSettingsFrame1.Font = Enum.Font.SourceSans
+HeaderSettingsFrame1.Text = "Cheat Settings"
+HeaderSettingsFrame1.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderSettingsFrame1.TextSize = 15.000
 
--- Scripts:
-local function TGOS_fake_script() -- Scripts.FrameScript 
-	local script = Instance.new('LocalScript', Scripts)
+UnloadButton.Name = "UnloadButton"
+UnloadButton.Parent = SettingsFrame1
+UnloadButton.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+UnloadButton.BorderSizePixel = 0
+UnloadButton.Position = UDim2.new(0.779999971, 0, 0.800000012, 0)
+UnloadButton.Size = UDim2.new(0.200000003, 0, 0.150000006, 0)
+UnloadButton.Font = Enum.Font.SourceSans
+UnloadButton.Text = "Unload Cheat"
+UnloadButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+UnloadButton.TextSize = 16.000
 
-	local mainframe = script.Parent.Parent.MainFrame.TabFrame
-	local buttons = {
-		legit = mainframe.LegitButton,
-		rage = mainframe.RageButton,
-		visuals = mainframe.VisualsButton,
-		misc = mainframe.MiscButton,
-		settings = mainframe.SettingsButton
-	}
-	local frames = {
-		legit = mainframe.SubFrame.MainLegitFrame,
-		rage = mainframe.SubFrame.MainRageFrame,
-		visuals = mainframe.SubFrame.MainVisualsFrame,
-		misc = mainframe.SubFrame.MainMiscFrame,
-		settings = mainframe.SubFrame.MainSettingsFrame
-	}
-	local activeTab = buttons.legit
-	
-	for i, button in pairs (buttons) do
-		button.Activated:Connect(function()
-			activeTab = frames[i]
-			
-			for i, frame in pairs (frames) do
-				if frame == activeTab then frame.Visible = true continue end
-				frame.Visible = false
-			end
-		end)
-	end
-end
-coroutine.wrap(TGOS_fake_script)()
+MainMiscFrame.Name = "MainMiscFrame"
+MainMiscFrame.Parent = MainFrame
+MainMiscFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainMiscFrame.BackgroundTransparency = 1.000
+MainMiscFrame.BorderSizePixel = 0
+MainMiscFrame.Position = UDim2.new(0.159999996, 0, 0.200000003, 0)
+MainMiscFrame.Size = UDim2.new(0.800000012, 0, 0.75, 0)
+MainMiscFrame.Visible = false
 
-local function KVRQ_fake_script() -- Scripts.SpeedHackScript 
-	local script = Instance.new('LocalScript', Scripts)
+MiscFrame1.Name = "MiscFrame1"
+MiscFrame1.Parent = MainMiscFrame
+MiscFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+MiscFrame1.BorderSizePixel = 0
+MiscFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
+MiscFrame1.Size = UDim2.new(1, 0, 0.949999988, 0)
 
-	local RunService = game:GetService("RunService")
-	local pl = game:GetService("Players")
-	local lpl = pl.LocalPlayer
-	local button = script.Parent.Parent.MainFrame.TabFrame.SubFrame.MainMiscFrame.MiscFrame1.SpeedHackCheckbox
-	local isActivated = false
-	local defaultWalkSpeed = lpl.Character.Humanoid.WalkSpeed
-	
-	button.Activated:Connect(function()
-		isActivated = not isActivated
-		
-		if isActivated == true then
-			button.BackgroundColor3 = Color3.fromRGB(110,110,110)
-		else
-			button.BackgroundColor3 = Color3.fromRGB(255,255,255)
-		end
-	end)
-	
-	local run_service = RunService.RenderStepped:Connect(function()
-		if isActivated == true then
-			lpl.Character.Humanoid.WalkSpeed = 50
-		else
-			if lpl.Character.Humanoid.WalkSpeed == 50 then
-				lpl.Character.Humanoid.WalkSpeed = defaultWalkSpeed
-			else
-				
-			end
-		end
-	end)
-	table.insert(callbacks, run_service)
-end
-coroutine.wrap(KVRQ_fake_script)()
+HeaderMiscFrame1.Name = "HeaderMiscFrame1"
+HeaderMiscFrame1.Parent = MiscFrame1
+HeaderMiscFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderMiscFrame1.BorderSizePixel = 0
+HeaderMiscFrame1.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderMiscFrame1.Size = UDim2.new(0.150000006, 0, 0.0500000007, 0)
+HeaderMiscFrame1.Font = Enum.Font.SourceSans
+HeaderMiscFrame1.Text = "Misc"
+HeaderMiscFrame1.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderMiscFrame1.TextSize = 15.000
 
--- functions
-local function onInputBegan(input, gameProcessed)
+MainVisualsFrame.Name = "MainVisualsFrame"
+MainVisualsFrame.Parent = MainFrame
+MainVisualsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainVisualsFrame.BackgroundTransparency = 1.000
+MainVisualsFrame.BorderSizePixel = 0
+MainVisualsFrame.Position = UDim2.new(0.159999996, 0, 0.200000003, 0)
+MainVisualsFrame.Size = UDim2.new(0.800000012, 0, 0.75, 0)
+MainVisualsFrame.Visible = false
+
+VisualsFrame1.Name = "VisualsFrame1"
+VisualsFrame1.Parent = MainVisualsFrame
+VisualsFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+VisualsFrame1.BorderSizePixel = 0
+VisualsFrame1.Position = UDim2.new(0, 0, 0.0500000007, 0)
+VisualsFrame1.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+
+HeaderVisualsFrame1.Name = "HeaderVisualsFrame1"
+HeaderVisualsFrame1.Parent = VisualsFrame1
+HeaderVisualsFrame1.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderVisualsFrame1.BorderSizePixel = 0
+HeaderVisualsFrame1.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderVisualsFrame1.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+HeaderVisualsFrame1.Font = Enum.Font.SourceSans
+HeaderVisualsFrame1.Text = "ESP"
+HeaderVisualsFrame1.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderVisualsFrame1.TextSize = 15.000
+
+VisualsFrame2.Name = "VisualsFrame2"
+VisualsFrame2.Parent = MainVisualsFrame
+VisualsFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+VisualsFrame2.BorderSizePixel = 0
+VisualsFrame2.Position = UDim2.new(0.5, 0, 0.0500000007, 0)
+VisualsFrame2.Size = UDim2.new(0.400000006, 0, 0.949999988, 0)
+
+HeaderVisualsFrame2.Name = "HeaderVisualsFrame2"
+HeaderVisualsFrame2.Parent = VisualsFrame2
+HeaderVisualsFrame2.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+HeaderVisualsFrame2.BorderSizePixel = 0
+HeaderVisualsFrame2.Position = UDim2.new(0.0500000007, 0, -0.0500000007, 0)
+HeaderVisualsFrame2.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+HeaderVisualsFrame2.Font = Enum.Font.SourceSans
+HeaderVisualsFrame2.Text = "Chams"
+HeaderVisualsFrame2.TextColor3 = Color3.fromRGB(253, 253, 253)
+HeaderVisualsFrame2.TextSize = 15.000
+
+Scripts.Name = "Scripts"
+Scripts.Parent = MenuGui
+
+-- Scripts
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.Keyboard then
 		if input.KeyCode == Enum.KeyCode.Insert then
-			ScreenGui.Enabled = not ScreenGui.Enabled
+			MainFrame.Visible = not MainFrame.Visible
 		end
 	end
-end
-
--- callbacks
-table.insert(callbacks, UserInputService.InputBegan:Connect(onInputBegan))
-
-
--- gui handling
-UnloadButton.Activated:Connect(function() 
-	for i, v in pairs (callbacks) do
-		v:Disconnect()
-	end
-
-	ScreenGui:Destroy()
 end)
