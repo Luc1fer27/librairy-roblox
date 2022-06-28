@@ -432,6 +432,10 @@ end)
 while isSpeedHackActivated do
 	localplayer.Character.Humanoid.WalkSpeed = 50
 	wait()
+
+	if not isSpeedHackActivated then
+		break
+	end
 end
 
 -- Unload Button
