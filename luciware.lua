@@ -226,7 +226,7 @@ MainSettingsFrame.BackgroundTransparency = 1.000
 MainSettingsFrame.BorderSizePixel = 0
 MainSettingsFrame.Position = UDim2.new(0.159999996, 0, 0.200000003, 0)
 MainSettingsFrame.Size = UDim2.new(0.800000012, 0, 0.75, 0)
-MainSettingsFrame.Visible = false
+MainSettingsFrame.Visible = true
 
 SettingsFrame1.Name = "SettingsFrame1"
 SettingsFrame1.Parent = MainSettingsFrame
