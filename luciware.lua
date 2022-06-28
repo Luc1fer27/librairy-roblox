@@ -335,21 +335,41 @@ Scripts.Parent = MenuGui
 -- Switch Between Tabs
 LegitButton.Activated:Connect(function()
 	MainLegitFrame.Visible = true
+	MainRageFrame.Visible = false
+	MainVisualsFrame.Visible = false
+	MainMiscFrame.Visible = false
+	MainSettingsFrame.Visible = false
 end)
 
 RageButton.Activated:Connect(function()
+	MainLegitFrame.Visible = false
 	MainRageFrame.Visible = true
+	MainVisualsFrame.Visible = false
+	MainMiscFrame.Visible = false
+	MainSettingsFrame.Visible = false
 end)
 
 VisualsButton.Activated:Connect(function()
+	MainLegitFrame.Visible = false
+	MainRageFrame.Visible = false
 	MainVisualsFrame.Visible = true
+	MainMiscFrame.Visible = false
+	MainSettingsFrame.Visible = false
 end)
 
 MiscButton.Activated:Connect(function()
+	MainLegitFrame.Visible = false
+	MainRageFrame.Visible = false
+	MainVisualsFrame.Visible = false
 	MainMiscFrame.Visible = true
+	MainSettingsFrame.Visible = false
 end)
 
 SettingsButton.Activated:Connect(function()
+	MainLegitFrame.Visible = false
+	MainRageFrame.Visible = false
+	MainVisualsFrame.Visible = false
+	MainMiscFrame.Visible = false
 	MainSettingsFrame.Visible = true
 end)
 
