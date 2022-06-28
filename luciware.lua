@@ -332,6 +332,27 @@ HeaderVisualsFrame2.TextSize = 15.000
 Scripts.Name = "Scripts"
 Scripts.Parent = MenuGui
 
+-- Switch Between Tabs
+LegitButton.Activated:Connect(function()
+	MainLegitFrame.Visible = true
+end)
+
+RageButton.Activated:Connect(function()
+	MainRageFrame.Visible = true
+end)
+
+VisualsButton.Activated:Connect(function()
+	MainVisualsFrame.Visible = true
+end)
+
+MiscButton.Activated:Connect(function()
+	MainMiscFrame.Visible = true
+end)
+
+SettingsButton.Activated:Connect(function()
+	MainSettingsFrame.Visible = true
+end)
+
 -- InsertMenu
 local UserInputService = game:GetService("UserInputService")
 
@@ -344,9 +365,7 @@ local InsertMenu = UserInputService.InputBegan:Connect(function(input)
 end)
 
 -- Unload Button
-local button = UnloadButton
-
-button.Activated:Connect(function()
+UnloadButton.Activated:Connect(function()
 	InsertMenu:Disconnect()
 	MenuGui:Destroy()
 end)
