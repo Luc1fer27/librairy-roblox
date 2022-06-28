@@ -333,45 +333,34 @@ Scripts.Name = "Scripts"
 Scripts.Parent = MenuGui
 
 -- Switch Between Tabs
-LegitButton.Activated:Connect(function()
-	MainLegitFrame.Visible = true
-	MainRageFrame.Visible = false
-	MainVisualsFrame.Visible = false
-	MainMiscFrame.Visible = false
-	MainSettingsFrame.Visible = false
-end)
+local buttons = {
+	legit = MainFrame.MainTabFrame.LegitButton,
+	rage = MainFrame.MainTabFrame.RageButton,
+	visuals = MainFrame.MainTabFrame.VisualsButton,
+	misc = MainFrame.MainTabFrame.MiscButton,
+	settings = MainFrame.MainTabFrame.SettingsButton
+}
 
-RageButton.Activated:Connect(function()
-	MainLegitFrame.Visible = false
-	MainRageFrame.Visible = true
-	MainVisualsFrame.Visible = false
-	MainMiscFrame.Visible = false
-	MainSettingsFrame.Visible = false
-end)
+local frames = {
+	legit = MainFrame.MainLegitFrame,
+	rage = MainFrame.MainRageFrame,
+	visuals = MainFrame.MainVisualsFrame,
+	misc = MainFrame.MainMiscFrame,
+	settings = MainFrame.MainSettingsFrame
+}
 
-VisualsButton.Activated:Connect(function()
-	MainLegitFrame.Visible = false
-	MainRageFrame.Visible = false
-	MainVisualsFrame.Visible = true
-	MainMiscFrame.Visible = false
-	MainSettingsFrame.Visible = false
-end)
+local activeTab = buttons.legit
 
-MiscButton.Activated:Connect(function()
-	MainLegitFrame.Visible = false
-	MainRageFrame.Visible = false
-	MainVisualsFrame.Visible = false
-	MainMiscFrame.Visible = true
-	MainSettingsFrame.Visible = false
-end)
-
-SettingsButton.Activated:Connect(function()
-	MainLegitFrame.Visible = false
-	MainRageFrame.Visible = false
-	MainVisualsFrame.Visible = false
-	MainMiscFrame.Visible = false
-	MainSettingsFrame.Visible = true
-end)
+for i, button in pairs (buttons) do
+	button.Activated:Connect(function()
+		activeTab = frames[i]
+		
+		for i, frame in pairs (frames) do
+			if frame == activeTab then frame.Visible = true continue end
+			frame.Visible = false
+		end
+	end)
+end
 
 -- InsertMenu
 local UserInputService = game:GetService("UserInputService")
