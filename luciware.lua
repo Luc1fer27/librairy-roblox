@@ -332,13 +332,21 @@ HeaderVisualsFrame2.TextSize = 15.000
 Scripts.Name = "Scripts"
 Scripts.Parent = MenuGui
 
--- Scripts
+-- InsertMenu
 local UserInputService = game:GetService("UserInputService")
 
-UserInputService.InputBegan:Connect(function(input)
+local InsertMenu = UserInputService.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.Keyboard then
 		if input.KeyCode == Enum.KeyCode.Insert then
 			MainFrame.Visible = not MainFrame.Visible
 		end
 	end
+end)
+
+-- Unload Button
+local button = UnloadButton
+
+button.Activated:Connect(function()
+	InsertMenu:Disconnect()
+	MenuGui:Destroy()
 end)
