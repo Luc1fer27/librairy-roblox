@@ -1,3 +1,7 @@
+-- Var
+local players = game:GetService("Players")
+local localplayer = players.LocalPlayer
+
 -- Instances:
 local MenuGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
@@ -26,6 +30,9 @@ local UnloadButton = Instance.new("TextButton")
 local MainMiscFrame = Instance.new("Frame")
 local MiscFrame1 = Instance.new("Frame")
 local HeaderMiscFrame1 = Instance.new("TextLabel")
+local SpeedHackFrame = Instance.new("Frame")
+local SpeedHackButton = Instance.new("TextButton")
+local SpeedHackText = Instance.new("TextLabel")
 local MainVisualsFrame = Instance.new("Frame")
 local VisualsFrame1 = Instance.new("Frame")
 local HeaderVisualsFrame1 = Instance.new("TextLabel")
@@ -284,6 +291,37 @@ HeaderMiscFrame1.Text = "Misc"
 HeaderMiscFrame1.TextColor3 = Color3.fromRGB(253, 253, 253)
 HeaderMiscFrame1.TextSize = 15.000
 
+SpeedHackFrame.Name = "SpeedHackFrame"
+SpeedHackFrame.Parent = MiscFrame1
+SpeedHackFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackFrame.BackgroundTransparency = 1.000
+SpeedHackFrame.Position = UDim2.new(0.0482998416, 0, 0.0570532009, 0)
+SpeedHackFrame.Size = UDim2.new(0.200000003, 0, 0.100000001, 0)
+
+SpeedHackButton.Name = "SpeedHackButton"
+SpeedHackButton.Parent = SpeedHackFrame
+SpeedHackButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackButton.BorderSizePixel = 2
+SpeedHackButton.Position = UDim2.new(0, 0, 0.349999994, 0)
+SpeedHackButton.Size = UDim2.new(0.109999999, 0, 0.400000006, 0)
+SpeedHackButton.Font = Enum.Font.SourceSans
+SpeedHackButton.Text = ""
+SpeedHackButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedHackButton.TextSize = 14.000
+
+SpeedHackText.Name = "SpeedHackText"
+SpeedHackText.Parent = SpeedHackFrame
+SpeedHackText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackText.BackgroundTransparency = 1.000
+SpeedHackText.Position = UDim2.new(0.150000006, 0, 0, 0)
+SpeedHackText.Size = UDim2.new(0.649999976, 0, 1, 0)
+SpeedHackText.Font = Enum.Font.SourceSans
+SpeedHackText.Text = "SpeedHack"
+SpeedHackText.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackText.TextSize = 17.000
+SpeedHackText.TextWrapped = true
+
 MainVisualsFrame.Name = "MainVisualsFrame"
 MainVisualsFrame.Parent = MainFrame
 MainVisualsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -372,6 +410,29 @@ local InsertMenu = UserInputService.InputBegan:Connect(function(input)
 		end
 	end
 end)
+
+-- SpeedHack
+local defaultWalkSpeed = localplayer.Character.Humanoid.WalkSpeed
+local isSpeedHackActivated = false
+
+SpeedHackButton.Activated:Connect(function()
+	isSpeedHackActivated = not isSpeedHackActivated
+
+	if isSpeedHackActivated == true then
+		SpeedHackButton.BackgroundColor3 = Color3.fromRGB(48, 165, 255)
+	else
+		SpeedHackButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+		if localplayer.Character.Humanoid.WalkSpeed == 50 then
+			localplayer.Character.Humanoid.WalkSpeed = defaultWalkSpeed
+		end
+	end
+end)
+
+while isSpeedHackActivated do
+	localplayer.Character.Humanoid.WalkSpeed = 50
+	wait()
+end
 
 -- Unload Button
 UnloadButton.Activated:Connect(function()
